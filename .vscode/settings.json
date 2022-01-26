@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "stdio.h": "c",
+        "freertos.h": "c"
+    },
+    "idf.port": "/dev/ttyUSB0"
+}

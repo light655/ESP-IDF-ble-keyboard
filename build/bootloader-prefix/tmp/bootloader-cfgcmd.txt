@@ -1,0 +1,1 @@
+cmd='/usr/bin/cmake;-DSDKCONFIG=/home/light/Documents/ESP-IDF-ble-keyboard/sdkconfig;-DIDF_PATH=/home/light/esp/esp-idf;-DIDF_TARGET=esp32;-DPYTHON_DEPS_CHECKED=1;-DPYTHON=/home/light/.espressif/python_env/idf4.3_py3.8_env/bin/python;-DEXTRA_COMPONENT_DIRS=/home/light/esp/esp-idf/components/bootloader;-DLEGACY_INCLUDE_COMMON_HEADERS=;-GNinja;<SOURCE_DIR><SOURCE_SUBDIR>'

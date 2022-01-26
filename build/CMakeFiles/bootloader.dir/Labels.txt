@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/bootloader
+/home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/bootloader.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/bootloader-complete.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/light/Documents/ESP-IDF-ble-keyboard/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule
