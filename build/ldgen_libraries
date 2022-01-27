@@ -36,6 +36,7 @@
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/cxx/libcxx.a
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/app_trace/libapp_trace.a
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/asio/libasio.a
+/home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/bt/libbt.a
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/cbor/libcbor.a
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/unity/libunity.a
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/cmock/libcmock.a

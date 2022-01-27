@@ -36,6 +36,7 @@ $<TARGET_FILE:__idf_newlib>
 $<TARGET_FILE:__idf_cxx>
 $<TARGET_FILE:__idf_app_trace>
 $<TARGET_FILE:__idf_asio>
+$<TARGET_FILE:__idf_bt>
 $<TARGET_FILE:__idf_cbor>
 $<TARGET_FILE:__idf_unity>
 $<TARGET_FILE:__idf_cmock>

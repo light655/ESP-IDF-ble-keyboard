@@ -17,8 +17,8 @@
 /home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/monitor.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/_project_elf_src.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/encrypted-flash.dir
-/home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/blink.elf.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/size-files.dir
+/home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/keyboard.elf.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/CMakeFiles/size.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/CMakeFiles/install/strip.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/CMakeFiles/install/local.dir
@@ -376,6 +376,7 @@
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/bt/CMakeFiles/list_install_components.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/bt/CMakeFiles/rebuild_cache.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/bt/CMakeFiles/edit_cache.dir
+/home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/bt/CMakeFiles/__idf_bt.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/cbor/CMakeFiles/install/local.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/cbor/CMakeFiles/install.dir
 /home/light/Documents/ESP-IDF-ble-keyboard/build/esp-idf/cbor/CMakeFiles/list_install_components.dir
