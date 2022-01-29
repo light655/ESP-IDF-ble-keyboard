@@ -39,7 +39,6 @@ void matrix_scan() {
             gpio_set_level(rPins[i], 1);
             for(int j = 0; j < 4; j++) {
                 if(gpio_get_level(cPins[j])) {
-                    // printf("%i \n", gpio_get_level(cPins[j]));
                     pressed[i * 4 + j] = true;
                 }
                 else {
@@ -66,7 +65,6 @@ void app_main(void) {
     matrix_setup();
 
     xTaskCreate(matrix_scan, "scan", 8192, NULL, 1, NULL);
-    // vTaskStartScheduler();
 
-    // while(true);
+    
 }
