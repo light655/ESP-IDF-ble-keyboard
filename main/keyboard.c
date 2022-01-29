@@ -4,30 +4,48 @@
 #include "driver/gpio.h"
 #include "sdkconfig.h"
 
-/* Can use project configuration menu (idf.py menuconfig) to choose the GPIO to blink,
-   or you can edit the following line and set a number here.
-*/
-#define BLINK_GPIO 22
+/**
+ * @brief This version is tested on a 4*5 numpad matrix.
+ * 
+ */
 
-void app_main(void)
-{
-    /* Configure the IOMUX register for pad BLINK_GPIO (some pads are
-       muxed to GPIO on reset already, but some default to other
-       functions and need to be switched to GPIO. Consult the
-       Technical Reference for a list of pads and their default
-       functions.)
-    */
-    gpio_reset_pin(BLINK_GPIO);
-    /* Set the GPIO as a push/pull output */
-    gpio_set_direction(BLINK_GPIO, GPIO_MODE_OUTPUT);
-    while(1) {
-        /* Blink off (output low) */
-        printf("Turning off the LED\n");
-        gpio_set_level(BLINK_GPIO, 0);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
-        /* Blink on (output high) */
-        printf("Turning on the LED\n");
-        gpio_set_level(BLINK_GPIO, 1);
-        vTaskDelay(1000 / portTICK_PERIOD_MS);
+const uint16_t cPins[4] = {16, 17, 5, 18};
+const uint16_t rPins[5] = {23, 19, 22, 0, 4};
+
+bool pressed[20], previous_pressed[20];
+
+void matrix_setup() {
+    for(int i = 0; i < 20; i++) {
+        pressed[i] = false;
+        previous_pressed[i] = false;
     }
+
+    for(int i = 0; i < 5; i++) {
+        gpio_reset_pin(rPins[i]);
+        gpio_set_direction(rPins[i], GPIO_MODE_OUTPUT);
+    }
+
+    for(int i = 0; i < 4; i++) {
+        gpio_reset_pin(cPins[i]);
+        gpio_set_direction(cPins[i], GPIO_MODE_INPUT);
+    }
+}
+
+void matrix_scan() {
+    for(int i = 0; i < 5; i++) {
+        gpio_set_level(rPins[i], 1);
+        for(int j = 0; j < 4; j++) {
+            previous_pressed[i * 4 + j] = pressed[i * 4 + j];
+            if(gpio_get_level(rPins[j])) {
+                pressed[i * 4 + j] = true;
+            }
+            else {
+                pressed[i * 4 + j] = false;
+            }
+        }
+    }
+}
+
+void app_main(void) {
+
 }

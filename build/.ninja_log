@@ -2131,3 +2131,16 @@
 23031	23042	1643248762128019699	CMakeFiles/keyboard.elf.dir/project_elf_src_esp32.c.obj	3dbd0bae0a3ca7c2
 23042	24251	1643248763332003502	keyboard.elf	a3c82dc3bc5487d0
 24251	24359	1643248763448001942	.bin_timestamp	a735078e5fce99c6
+0	836352	0	CMakeFiles/confserver	f3008e4362ee09f3
+1	2244	1643416369363271787	build.ninja	e081078e1baab180
+21	39	1643204152299965327	bootloader-prefix/src/bootloader-stamp/bootloader-build	f5165dcb2e769ea
+21	39	1643204152299965327	bootloader/bootloader.elf	f5165dcb2e769ea
+21	39	1643204152299965327	bootloader/bootloader.bin	f5165dcb2e769ea
+21	39	1643204152299965327	bootloader/bootloader.map	f5165dcb2e769ea
+22	66	1643416369499270109	esp-idf/app_update/CMakeFiles/__idf_app_update.dir/esp_app_desc.c.obj	e6411e0b55fcd5c4
+66	76	1643416369511269960	esp-idf/app_update/libapp_update.a	c088220e07b17c84
+77	143	1643416369575269171	esp-idf/main/CMakeFiles/__idf_main.dir/keyboard.c.obj	48e33a001377cc91
+143	156	1643416369591268974	esp-idf/main/libmain.a	2b78503b8fb7755
+156	1233	1643416370639256040	esp-idf/esp32/ld/esp32.project.ld	23ed3ae4b138e0cf
+1234	2495	1643416371919240243	keyboard.elf	a3c82dc3bc5487d0
+2495	2602	1643416372035238811	.bin_timestamp	a735078e5fce99c6
