@@ -117,11 +117,12 @@ void matrix_scan() {
                 else {
                     pressed[i * 4 + j] = false;
                 }
-                vTaskDelay(2);
+                
             }
             gpio_set_level(rPins[i], 0);
+            vTaskDelay(2);
         }
-
+        
     //     for(int i = 0; i < 20; i++) {
     //         if(pressed[i] == true && previous_pressed[i] == false) {
     //             this_key.key = i;
@@ -222,6 +223,7 @@ static void gap_event_handler(esp_gap_ble_cb_event_t event, esp_ble_gap_cb_param
 void send_keys(void *pvParameters) {
     int num_pressed;
     uint8_t *pointer;
+    uint8_t clear = {0};
     while(true) {
         if(sec_conn) {
             num_pressed = 0;
@@ -230,7 +232,7 @@ void send_keys(void *pvParameters) {
             }
 
             if(num_pressed) {
-                pointer = malloc(num_pressed * sizeof(uint8_t));
+                pointer = malloc(num_pressed * sizeof(uint8_t *));
                 int j = 0;
                 for(int i = 0; i < 20; i++) {
                     if(pressed[i]) {
@@ -247,9 +249,7 @@ void send_keys(void *pvParameters) {
                 free(pointer);
             }
             else {
-                pointer = calloc(1, sizeof(uint8_t));
-                esp_hidd_send_keyboard_value(hid_conn_id, 0, pointer, 0);
-                free(pointer);
+                esp_hidd_send_keyboard_value(hid_conn_id, 0, &clear, 0);
             }
             vTaskDelay(15);
         }
@@ -325,5 +325,5 @@ void app_main(void) {
     // while(!sec_conn) {};
     xTaskCreatePinnedToCore(matrix_scan, "scan", 8192, NULL, 1, NULL, 1);
     // xTaskCreatePinnedToCore(print_value, "print", 8192, NULL, 1, NULL, 0);
-    xTaskCreatePinnedToCore(send_keys, "send", 8192, NULL, 1, NULL, 0);
+    xTaskCreatePinnedToCore(send_keys, "send", 8192, NULL, 1, NULL, 1);
 }
