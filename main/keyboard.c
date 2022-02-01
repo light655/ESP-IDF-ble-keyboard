@@ -323,7 +323,7 @@ void app_main(void) {
     // xqueue = xQueueCreate(16, sizeof(int) + 2 * sizeof(char));
 
     // while(!sec_conn) {};
-    xTaskCreatePinnedToCore(matrix_scan, "scan", 8192, NULL, 1, NULL, 1);
+    xTaskCreate(matrix_scan, "scan", 8192, NULL, 1, NULL);
     // xTaskCreatePinnedToCore(print_value, "print", 8192, NULL, 1, NULL, 0);
-    xTaskCreatePinnedToCore(send_keys, "send", 8192, NULL, 1, NULL, 1);
+    xTaskCreate(send_keys, "send", 8192, NULL, 1, NULL);
 }
