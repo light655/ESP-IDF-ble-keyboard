@@ -52,7 +52,7 @@ static esp_ble_adv_data_t hidd_adv_data = {
     .include_txpower = true,
     .min_interval = 0x0006, //slave connection min interval, Time = min_interval * 1.25 msec
     .max_interval = 0x0010, //slave connection max interval, Time = max_interval * 1.25 msec
-    .appearance = 0x03c0,       //HID Generic,
+    .appearance = 0x03c1,       //HID Generic,
     .manufacturer_len = 0,
     .p_manufacturer_data =  NULL,
     .service_data_len = 0,
@@ -84,15 +84,10 @@ const uint8_t outputs[20] = {
 };
 
 // static QueueHandle_t xqueue = NULL;
-bool pressed[20], previous_pressed[20];
+bool pressed[20] = {false}, previous_pressed[20] = {false};
 struct key_pair this_key, that_key;
 
 void matrix_setup() {
-    for(int i = 0; i < 20; i++) {
-        pressed[i] = false;
-        previous_pressed[i] = false;
-    }
-
     for(int i = 0; i < 5; i++) {
         gpio_reset_pin(rPins[i]);
         gpio_set_direction(rPins[i], GPIO_MODE_OUTPUT);
@@ -320,10 +315,9 @@ void app_main(void) {
     esp_ble_gap_set_security_param(ESP_BLE_SM_SET_INIT_KEY, &init_key, sizeof(uint8_t));
     esp_ble_gap_set_security_param(ESP_BLE_SM_SET_RSP_KEY, &rsp_key, sizeof(uint8_t));
 
-    // xqueue = xQueueCreate(16, sizeof(int) + 2 * sizeof(char));
 
-    // while(!sec_conn) {};
     xTaskCreate(matrix_scan, "scan", 8192, NULL, 1, NULL);
-    // xTaskCreatePinnedToCore(print_value, "print", 8192, NULL, 1, NULL, 0);
     xTaskCreate(send_keys, "send", 8192, NULL, 1, NULL);
+    // xTaskCreatePinnedToCore(matrix_scan, "scan", 8192, NULL, 1, NULL, tskNO_AFFINITY);
+    // xTaskCreatePinnedToCore(send_keys, "send", 8192, NULL, 1, NULL, tskNO_AFFINITY);
 }
